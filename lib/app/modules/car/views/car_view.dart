@@ -9,8 +9,9 @@ class CarView extends GetView<CarController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromRGBO(172, 201, 230, 1),
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 83, 88, 244),
+        backgroundColor: const Color.fromARGB(255, 83, 88, 244),
         title: const Text("Машина Шайлушая"),
         centerTitle: true,
       ),
@@ -25,25 +26,17 @@ class CarView extends GetView<CarController> {
           ),
           Text(
             'Color: ${controller.car.color}',
-            style: const TextStyle(fontSize: 20, color: Colors.grey),
+            style: const TextStyle(
+                fontSize: 20, color: Color.fromARGB(255, 59, 58, 58)),
           ),
-          controller.car.availability == false
-              ? const Text(
-                  'NOT IN STOCK',
-                  style: TextStyle(
-                    color: Colors.red,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 48,
-                  ),
-                )
-              : Text(
-                  'Car price: \$${controller.car.price.toString()}',
-                  style: const TextStyle(
-                    color: Color.fromARGB(255, 9, 7, 39),
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20,
-                  ),
-                ),
+          Text(
+            'Car price: \$${controller.car.price.toString()}',
+            style: const TextStyle(
+              color: Color.fromARGB(255, 9, 7, 39),
+              fontWeight: FontWeight.bold,
+              fontSize: 20,
+            ),
+          ),
         ],
       )),
     );

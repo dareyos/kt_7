@@ -1,23 +1,10 @@
 import 'package:get/get.dart';
+import 'package:kt_7/app/data/models/car/car.dart';
 
 class CarController extends GetxController {
-  //TODO: Implement CarController
-
-  final count = 0.obs;
+  Car car = Get.arguments;
   @override
   void onInit() {
     super.onInit();
   }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
-  void increment() => count.value++;
 }

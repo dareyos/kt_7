@@ -30,6 +30,11 @@ class CarView extends GetView<CarController> {
                 fontSize: 20, color: Color.fromARGB(255, 59, 58, 58)),
           ),
           Text(
+            'Car model year: ${controller.car.year}',
+            style: const TextStyle(
+                fontSize: 20, color: Color.fromARGB(255, 59, 58, 58)),
+          ),
+          Text(
             'Car price: \$${controller.car.price.toString()}',
             style: const TextStyle(
               color: Color.fromARGB(255, 9, 7, 39),

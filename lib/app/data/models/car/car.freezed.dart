@@ -27,6 +27,8 @@ mixin _$Car {
   String get model => throw _privateConstructorUsedError;
   @JsonKey(name: "car_color")
   String get color => throw _privateConstructorUsedError;
+  @JsonKey(name: "car_model_year")
+  int get year => throw _privateConstructorUsedError;
   @DoubleToStringConverter()
   double get price => throw _privateConstructorUsedError;
   bool get availability => throw _privateConstructorUsedError;
@@ -46,6 +48,7 @@ abstract class $CarCopyWith<$Res> {
       @JsonKey(name: "car") String brand,
       @JsonKey(name: "car_model") String model,
       @JsonKey(name: "car_color") String color,
+      @JsonKey(name: "car_model_year") int year,
       @DoubleToStringConverter() double price,
       bool availability});
 }
@@ -66,6 +69,7 @@ class _$CarCopyWithImpl<$Res, $Val extends Car> implements $CarCopyWith<$Res> {
     Object? brand = null,
     Object? model = null,
     Object? color = null,
+    Object? year = null,
     Object? price = null,
     Object? availability = null,
   }) {
@@ -86,6 +90,10 @@ class _$CarCopyWithImpl<$Res, $Val extends Car> implements $CarCopyWith<$Res> {
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
               as String,
+      year: null == year
+          ? _value.year
+          : year // ignore: cast_nullable_to_non_nullable
+              as int,
       price: null == price
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
@@ -109,6 +117,7 @@ abstract class _$$CarImplCopyWith<$Res> implements $CarCopyWith<$Res> {
       @JsonKey(name: "car") String brand,
       @JsonKey(name: "car_model") String model,
       @JsonKey(name: "car_color") String color,
+      @JsonKey(name: "car_model_year") int year,
       @DoubleToStringConverter() double price,
       bool availability});
 }
@@ -126,6 +135,7 @@ class __$$CarImplCopyWithImpl<$Res> extends _$CarCopyWithImpl<$Res, _$CarImpl>
     Object? brand = null,
     Object? model = null,
     Object? color = null,
+    Object? year = null,
     Object? price = null,
     Object? availability = null,
   }) {
@@ -146,6 +156,10 @@ class __$$CarImplCopyWithImpl<$Res> extends _$CarCopyWithImpl<$Res, _$CarImpl>
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
               as String,
+      null == year
+          ? _value.year
+          : year // ignore: cast_nullable_to_non_nullable
+              as int,
       null == price
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
@@ -166,6 +180,7 @@ class _$CarImpl implements _Car {
       @JsonKey(name: "car") this.brand,
       @JsonKey(name: "car_model") this.model,
       @JsonKey(name: "car_color") this.color,
+      @JsonKey(name: "car_model_year") this.year,
       @DoubleToStringConverter() this.price,
       this.availability);
 
@@ -184,6 +199,9 @@ class _$CarImpl implements _Car {
   @JsonKey(name: "car_color")
   final String color;
   @override
+  @JsonKey(name: "car_model_year")
+  final int year;
+  @override
   @DoubleToStringConverter()
   final double price;
   @override
@@ -191,7 +209,7 @@ class _$CarImpl implements _Car {
 
   @override
   String toString() {
-    return 'Car(id: $id, brand: $brand, model: $model, color: $color, price: $price, availability: $availability)';
+    return 'Car(id: $id, brand: $brand, model: $model, color: $color, year: $year, price: $price, availability: $availability)';
   }
 
   @override
@@ -203,6 +221,7 @@ class _$CarImpl implements _Car {
             (identical(other.brand, brand) || other.brand == brand) &&
             (identical(other.model, model) || other.model == model) &&
             (identical(other.color, color) || other.color == color) &&
+            (identical(other.year, year) || other.year == year) &&
             (identical(other.price, price) || other.price == price) &&
             (identical(other.availability, availability) ||
                 other.availability == availability));
@@ -210,8 +229,8 @@ class _$CarImpl implements _Car {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, id, brand, model, color, price, availability);
+  int get hashCode => Object.hash(
+      runtimeType, id, brand, model, color, year, price, availability);
 
   @JsonKey(ignore: true)
   @override
@@ -233,6 +252,7 @@ abstract class _Car implements Car {
       @JsonKey(name: "car") final String brand,
       @JsonKey(name: "car_model") final String model,
       @JsonKey(name: "car_color") final String color,
+      @JsonKey(name: "car_model_year") final int year,
       @DoubleToStringConverter() final double price,
       final bool availability) = _$CarImpl;
 
@@ -249,6 +269,9 @@ abstract class _Car implements Car {
   @override
   @JsonKey(name: "car_color")
   String get color;
+  @override
+  @JsonKey(name: "car_model_year")
+  int get year;
   @override
   @DoubleToStringConverter()
   double get price;

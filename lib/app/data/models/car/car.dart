@@ -24,6 +24,7 @@ class Car with _$Car {
     @JsonKey(name: "car") String brand,
     @JsonKey(name: "car_model") String model,
     @JsonKey(name: "car_color") String color,
+    @JsonKey(name: "car_model_year") int year,
     @DoubleToStringConverter() double price,
     bool availability,
   ) = _Car;

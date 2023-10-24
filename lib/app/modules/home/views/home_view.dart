@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:kt_7/app/data/models/car/car.dart';
 
 import '../controllers/home_controller.dart';
 
@@ -44,7 +43,7 @@ class HomeView extends GetView<HomeController> {
                             title: Text('${curCar.brand} ${curCar.model}',
                                 style: const TextStyle(
                                     fontWeight: FontWeight.bold)),
-                            subtitle: Text(curCar.color),
+                            subtitle: Text("${curCar.color}, car year: ${curCar.year}"),
                             trailing: curCar.availability == false
                                 ? const Text(
                                     'NOT IN STOCK',
